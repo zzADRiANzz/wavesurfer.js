@@ -112,7 +112,7 @@ export class Region {
     }
 
     setStyleState(styleName) {
-        const match = this.styleOptions.find( ({name}) => { name === styleName});
+        const match = this.styleOptions.find( ({name}) => { return name === styleName });
 
         if (match) {
             this.update({background: match.background});
