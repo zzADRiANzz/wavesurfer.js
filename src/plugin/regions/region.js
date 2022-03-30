@@ -99,14 +99,13 @@ export class Region {
             name: data.name ?? 'default',
             background: data.background ?? `linear-gradient(rgba(0, 0, 0, 0), #ed506acc, rgba(0, 0, 0, 0))`,
             leftHandleDisplayStyle: data.leftHandleDisplayStyle ?? 'none',
-            righthandleDisplayStyle: data.rightHandleDisplayStyle ?? 'none',
+            rightHandleDisplayStyle: data.rightHandleDisplayStyle ?? 'none',
             leftBorderStyle: data.leftBorderStyle ?? '',
             rightBorderStyle: data.rightBorderStyle ?? '',
             zIndexStyle: data.zIndexStyle ?? 3,
             regionHoverState: data.regionHoverState ?? false,
             canResizeRegion: data.canResizeRegion ?? false,
         }
-        console.log(newStyleOptions);
 
         this.styleOptions.push(newStyleOptions);
     }
