@@ -110,7 +110,7 @@ export default class MultiCanvas extends Drawer {
         );
         this.style(this.progressWave, {
             position: 'absolute',
-            zIndex: 3,
+            zIndex: this.params.progressZIndex,
             left: 0,
             top: 0,
             bottom: 0,
@@ -120,7 +120,8 @@ export default class MultiCanvas extends Drawer {
             boxSizing: 'border-box',
             borderRightStyle: 'solid',
             pointerEvents: 'none',
-            height: this.params.canvasHeight
+            height: this.params.canvasHeight,
+            backgroundColor: this.params.progressBackgroundColor
         });
 
         this.addCanvas();
