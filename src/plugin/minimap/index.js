@@ -67,6 +67,7 @@ export default class MinimapPlugin {
                 overviewZIndex: params.overviewZIndex || 2,
                 // the container should be different
                 container: false,
+                rootDocument: false,
                 height: Math.max(Math.round(ws.params.height / 4), 20),
                 widthRatio: params.width || 1
             },
@@ -116,7 +117,7 @@ export default class MinimapPlugin {
             }
             // if there is no such element, append it to the container (below
             // the waveform)
-            if (!document.body.contains(this.params.container)) {
+            if (!document.body.contains(this.params.container) && !this.params.rootDocument || !this.params.rootDocument.contains(this.params.container)){
                 ws.container.insertBefore(this.params.container, null);
             }
 
