@@ -50,6 +50,9 @@ export class Region {
         this.mode = params.mode || 'default';
         this.prevMode = null;
 
+        this.wavesurferDrawerWidth = this.wavesurfer.drawer.width;
+        this.wavesurferPixelRatio = this.wavesurfer.params.pixelRatio;
+
         this.maxLength = params.maxLength;
         // It assumes the minLength parameter value, or the regionsMinLength parameter value, if the first one not provided
         this.minLength = params.minLength;
@@ -356,7 +359,11 @@ export class Region {
     }
 
     getWidth() {
-        return this.wavesurfer.drawer.width / this.wavesurfer.params.pixelRatio;
+        if (this.wavesurferDrawerWidth == 0) {
+            this.wavesurferDrawerWidth = this.wavesurfer.drawer.width;
+            this.wavesurferPixelRatio = this.wavesurfer.params.pixelRatio;
+        }
+        return this.wavesurferDrawerWidth / this.wavesurferPixelRatio;
     }
 
     /* Update element's position, width, color. */
